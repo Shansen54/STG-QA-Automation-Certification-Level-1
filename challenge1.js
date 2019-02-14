@@ -2,7 +2,7 @@ require('chromedriver');
 var webdriver = require('selenium-webdriver');
 var assert = require("chai").assert
 
-//Getting to GIT for real
+//Getting to GIT and now in the asserting branch
 describe("challenge1 suite", function(){
     this.timeout(30000);
     var driver;
