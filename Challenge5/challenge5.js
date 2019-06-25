@@ -10,7 +10,7 @@ var frontend = 0, rearend = 0, mindent = 0, side = 0, water = 0, misc = 0;
 
 /*For this challenge, go to https://www.copart.com (Done) and do a search for “porsche” (Done) and change the  
 drop down for “Show Entries” to 100 from 20 (Done). Count how many different models of porsche is in the results on the first page (Done)
-and return in the terminal how many of each type exists. (Done) Also include the numbers of types of damage. */
+and return in the terminal how many of each type exists. (Done) Also include the numbers of types of damage. (Done)*/
 /*This list can dynamically change but using a loop will make sure that everything will be displayed regardless of the list size.*/
 
 describe("Challenge5 suite", function(){
