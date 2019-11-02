@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require('chromedriver');
 var webdriver = require('selenium-webdriver');
 var assert = require("chai").assert;
@@ -38,17 +39,21 @@ it("Should run a search for exotics", async function() {
     var element = await driver.findElement(By.id("input-search"));
     return element.sendKeys("exotics" + Key.ENTER)
     });
-
+    
 it("Should wait and assert that exotics is in the title", async function() {
-    this.timeout(5000);
-    return driver.wait(until.titleContains("exotics"), 5000).then(function(title){}); {
+    console.log(await driver.getTitle());
+    
+    return driver.wait(until.titleContains("exotics"), 5000).then( async function() {
         console.log(await driver.getTitle());
+        driver.getTitle().then(function(title) {
         assert.equal(title, "exotics For Auction at Copart - Salvage Cars For Sale");
-        };
-    });
+        }
+    )}
 
-it("Should assert that Porshe is on the page", async function() {
+
+, it("Should assert that Porsche is on the page", async function() {
     var html = await driver.findElement(By.tagName("tbody")).getAttribute('innerHTML'); 
             return assert.include(html, "PORSCHE");  
-    });
-})
+    })
+)},
+)})
