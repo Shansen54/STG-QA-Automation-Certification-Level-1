@@ -1,0 +1,23 @@
+{
+  "name": "stg_qa_challenges",
+  "version": "1.0.0",
+  "description": "Scott Hansen's 2019 QA Automation Challenges",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shansen54/STG-QA-Automation-Certification-Level-1.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Hansen",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "^2.46.0",
+    "mocha": "^5.2.0",
+    "npm": "^6.4.1",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
