@@ -65,7 +65,7 @@ describe("Challenge6 suite", function(){
      }
  
      catch (e){
-        let filterCheckbox = await driver.findElement(By.xpath("//*[@id='lot_model_descSKYLINEGTR']"));
+        let filterCheckbox = await driver.findElement(By.xpath("//*[@id='lot_model_descSKYLINE']"));
         filterCheckbox.click();
         await driver.wait(until.elementIsNotVisible(driver.findElement(By.id('serverSideDataTable_processing'), 20000)));
         screenShot.takeScreen();
