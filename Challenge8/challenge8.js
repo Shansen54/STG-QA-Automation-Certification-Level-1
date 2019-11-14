@@ -13,7 +13,7 @@ const driverManager = require('../common/driver');
 /*For this challenge, take a look at https://www.copart.com main page.  - Done.
 Hint: xpath is easiest.  ***Note, you did part of this in challenge 3. ***  */
 
-describe("Challenge7 suite", function(){
+describe("Challenge8 suite", function(){
     this.timeout(60000);
 
     before(async function () {
@@ -46,21 +46,15 @@ it('Should collect the name and URL of popular searched for products and print t
 });
 
 /* Once you have this array, you can verify all the elements in the array navigates to the correct page.  
-Don’t forget to verify some piece of data on the page.  Done.
+Don’t forget to verify some piece of data on the page.  
 */
 
-it('Should open each url and check for the model or make name', async function() {
+it('Should open each url and check for the model or makes name', async function() {
     for(let i=0; i < combinedArray.length; i++){
         var upperModelName = (combinedArray[i][0]);
-        console.log(upperModelName);
-        var lowerModelName = upperModelName.toLowerCase();
-        console.log(lowerModelName);
-    if (upperModelName == 'MALIBU'){
-        await driver.get(combinedArray[i][1]);
-        (await driver.wait(until.titleContains('malibu'), 30000));
-        console.log("Found MALIBU on " + (combinedArray[i][1]));
-        }
-    else {
+//        console.log(upperModelName);
+//        var lowerModelName = upperModelName.toLowerCase();
+//        console.log(lowerModelName);
         await driver.get(combinedArray[i][1]);
         assert (await driver.wait(until.elementIsNotVisible(driver.findElement(By.id('serverSideDataTable_processing'), 30000))));
             if (i < 10) { var searchModelResult = await driver.findElement(By.css("tbody > tr:first-child > td:nth-of-type(6) > span")).getText();
@@ -72,7 +66,6 @@ it('Should open each url and check for the model or make name', async function()
             console.log("Found " + searchResult + " on " + (combinedArray[i][1]));
             assert.include(searchResult, upperModelName);
                 }
-            }
 }
 });
 });
