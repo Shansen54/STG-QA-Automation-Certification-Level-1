@@ -63,12 +63,12 @@ it('Should open each url and check for the model or make name', async function()
     else {
         await driver.get(combinedArray[i][1]);
         assert (await driver.wait(until.elementIsNotVisible(driver.findElement(By.id('serverSideDataTable_processing'), 30000))));
-            if (i < 10) { var searchModelResult = await driver.findElement(By.css("tbody > tr:first-child > td:nth-of-type(6) > span")).getText();
+            if (i < 10) { var searchModelResult = await driver.findElement(By.xpath('//tr[1]//td[6]//span[1]')).getText();
             console.log("Found " + searchModelResult + " on " + (combinedArray[i][1]));
             assert.include(searchModelResult, upperModelName);
                         }
             else {
-            var searchResult = await driver.findElement(By.css("tbody > tr:first-child > td:nth-of-type(5) > span")).getText();
+            var searchResult = await driver.findElement(By.xpath('//tr[1]//td[5]//span[1]')).getText();
             console.log("Found " + searchResult + " on " + (combinedArray[i][1]));
             assert.include(searchResult, upperModelName);
                 }
