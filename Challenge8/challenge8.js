@@ -6,7 +6,7 @@ var request = require('request');
 
 var headers = {
     'User-Agent':       'Super Agent/0.0.1',
-    'Content-Type':     'application/x-www-form-urlencoded',
+    'Content-Type':     'application/json',
     'Authorization':    'Bearer token'
 }
 
@@ -15,23 +15,31 @@ var options = {
     url: 'https://www.copart.com/public/lots/search',
     method: 'POST',
     headers: headers,
-    form: {'query1': 'toyota camry'}
+    form: {'query': 'camry'}
 }
 
 
 describe("Challenge8 suite", function(){
     this.timeout(60000);
 
-    it("Should search for specified car makes and models.", function() {
+    it("Should search for specified car makes and models.", async function() {
         //Starting the requests
-        request(options, function (error, response, body) {
-            if (!error && response.statusCode == 200){
-            console.log(body);
-            console.log('statusCode:', response && response.statusCode);
-            }
-            else {
-                console.log('error:', error);
-            }
-        }
-    )});
+        var listToSearch = ["honda", "chevy", "GMC", "ford", "accord", "charger"];
+        for (var i=0; i < listToSearch.length; i++){
+            options.form.query = listToSearch[i];
+            console.log(options.form.query); // checks for the car to be searched. This works.
+            request(options, function (error, response, body) {
+                if (!error && response.statusCode == 200){
+                var results = response.toJSON(body);
+                console.log(results); //This does not seem to output any usable results, including the query results. Please point me to an article that can explain what I am missing.
+                //console.log(options.form.query); // checks for the car to be searched and it only returns the final one. Why?
+                //console.log(body);
+                //console.log('statusCode:', response && response.statusCode);
+                }
+                else {
+                    console.log('error:', error);
+                }
+            })
+    }
+    });
 });
