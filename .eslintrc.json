@@ -1,7 +1,10 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "amd": true,
+        "mocha": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "globals": {
