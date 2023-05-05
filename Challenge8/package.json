@@ -19,7 +19,7 @@
     "chromedriver": "^2.46.0",
     "mocha": "^10.2.0",
     "npm": "^9.2.0",
-    "selenium-webdriver": "^4.0.0-alpha.1",
+    "selenium-webdriver": "^4.9.0",
     "express": "latest",
     "request": "latest",
     "cheerio": "latest"
