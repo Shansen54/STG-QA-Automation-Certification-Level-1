@@ -16,6 +16,6 @@
     "selenium-webdriver": "^4.9.0"
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^9.39.1"
   }
 }
