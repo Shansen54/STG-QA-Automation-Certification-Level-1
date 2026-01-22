@@ -18,7 +18,7 @@
     "chai-as-promised": "^7.1.1",
     "chromedriver": "^119.0.1",
     "mocha": "^10.8.2",
-    "npm": "^11.7.0",
+    "npm": "^11.8.0",
     "selenium-webdriver": "^4.9.0",
     "express": "latest",
     "request": "latest",
